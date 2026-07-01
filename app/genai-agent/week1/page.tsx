@@ -1,85 +1,46 @@
+"use client";
+
 import Link from 'next/link';
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Week1Page() {
   return (
-    <main className="max-w-5xl mx-auto p-6 md:p-12 min-h-screen flex flex-col">
-      <Link href="/" className="text-sm text-blue-400 hover:underline mb-6 inline-block">
-        ← Back to Dashboard
+    <main className="min-h-screen py-24 px-6 md:px-12 max-w-4xl mx-auto">
+      <Link href="/" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-2 mb-12">
+        <ArrowLeft size={16} /> Back to Atelier
       </Link>
       
-      <header className="mb-10 border-b border-slate-700 pb-6">
-        <h1 className="text-3xl font-bold text-slate-100">Week 1: GenAI Orientation & Foundations</h1>
-        <p className="text-slate-400 mt-2">Setting the baseline: What is GenAI, how do LLMs work, and how do we use them responsibly?</p>
+      <header className="mb-24">
+        <span className="text-blue-500 font-mono text-sm tracking-widest uppercase italic">01 // The Foundations</span>
+        <h1 className="text-5xl md:text-6xl font-bold mt-4 tracking-tight">Genesis of Logic</h1>
       </header>
 
-      <div className="flex-grow space-y-8">
-        
-        {/* Module 1: Foundations */}
-        <section className="bg-slate-800 p-8 rounded-xl border border-slate-700">
-          <h2 className="text-2xl font-semibold text-blue-400 mb-4">1. Foundations in Generative AI</h2>
-          <p className="text-slate-300 leading-relaxed mb-4">
-            Unlike traditional AI which is trained to predict or classify existing data, Generative AI (GenAI) creates net-new content based on patterns it learned during training.
+      <div className="space-y-24">
+        <section>
+          <h2 className="text-2xl font-light italic text-neutral-400 mb-8 tracking-widest">Concept 01: The Nature of Generation</h2>
+          <p className="text-xl leading-relaxed text-neutral-700 dark:text-neutral-300 font-serif">
+            Traditional computing is transactional; you input X to get Y. Generative AI, however, 
+            is probabilistic. It is a mirror held up to the vastness of human knowledge, 
+            interpreting patterns to synthesize something entirely net-new.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <div className="bg-slate-900 p-4 rounded-lg border border-slate-700/50">
-              <h3 className="font-bold text-slate-200 mb-2">📝 Text Generation</h3>
-              <p className="text-sm text-slate-400">Drafting emails, writing code, or summarizing documents.</p>
-            </div>
-            <div className="bg-slate-900 p-4 rounded-lg border border-slate-700/50">
-              <h3 className="font-bold text-slate-200 mb-2">🎨 Image Generation</h3>
-              <p className="text-sm text-slate-400">Creating UI mockups, marketing assets, or conceptual art.</p>
-            </div>
-            <div className="bg-slate-900 p-4 rounded-lg border border-slate-700/50">
-              <h3 className="font-bold text-slate-200 mb-2">🎵 Audio & Video</h3>
-              <p className="text-sm text-slate-400">Generating voiceovers or synthesizing realistic avatars.</p>
-            </div>
-          </div>
         </section>
 
-        {/* Module 2: Ethics */}
-        <section className="bg-slate-800 p-8 rounded-xl border border-slate-700">
-          <h2 className="text-2xl font-semibold text-teal-400 mb-4">2. Ethical Considerations</h2>
-          <p className="text-slate-300 leading-relaxed mb-6">
-            With great power comes the need for guardrails. Deploying AI in a business environment requires strict adherence to ethical principles.
+        <section className="glass rounded-3xl p-12 border border-neutral-200 dark:border-neutral-800">
+          <h2 className="text-xl font-bold mb-8">The Transformer Architecture</h2>
+          <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            At the heart of the LLM lies the Transformer—a mechanism that allows the model 
+            to weight the importance of different parts of input data, essentially 
+            "attending" to context in ways that simulate true comprehension.
           </p>
-          <ul className="space-y-4 text-sm text-slate-300">
-            <li className="flex items-start">
-              <span className="text-teal-400 mr-2">►</span>
-              <div><strong>Hallucinations:</strong> AI models don't "know" facts; they predict the next logical word. They can confidently output false information. Always verify.</div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-400 mr-2">►</span>
-              <div><strong>Data Privacy:</strong> Never put proprietary company code, PII (Personally Identifiable Information), or client data into a public model like ChatGPT.</div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-400 mr-2">►</span>
-              <div><strong>Algorithmic Bias:</strong> Models inherit the biases present in their training data. Output must be checked for discriminatory or non-inclusive language.</div>
-            </li>
-          </ul>
         </section>
-
-        {/* Module 3: LLMs */}
-        <section className="bg-slate-800 p-8 rounded-xl border border-slate-700">
-          <h2 className="text-2xl font-semibold text-purple-400 mb-4">3. Introduction to Large Language Models</h2>
-          <p className="text-slate-300 leading-relaxed mb-4">
-            LLMs are a specific type of GenAI built on the <strong>Transformer architecture</strong>. They are trained on massive datasets of text to understand syntax, semantics, and context.
-          </p>
-          <div className="p-4 bg-slate-900 rounded-lg border border-slate-700/50 text-sm text-slate-300 italic">
-            <strong>Key Concept:</strong> An LLM is essentially the world's most advanced autocomplete. It uses vast neural networks to calculate the highest probability of what the next word in a sequence should be based on the context window you provide.
-          </div>
-        </section>
-
       </div>
 
-      {/* BOTTOM NAVIGATION */}
-      <div className="mt-12 pt-6 border-t border-slate-800 flex justify-between items-center">
-        <Link href="/" className="px-5 py-2.5 bg-slate-800 text-slate-300 hover:bg-slate-700 rounded-lg transition-colors text-sm font-medium">
-          ← Dashboard
+      <nav className="mt-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 flex justify-between">
+        <Link href="/" className="text-sm italic text-neutral-500">Back to Studio</Link>
+        <Link href="/genai-agent/week2" className="text-sm font-semibold flex items-center gap-2 hover:translate-x-2 transition-transform">
+          Next: Leveraging Context <ArrowRight size={16} />
         </Link>
-        <Link href="/genai-agent/week2" className="px-5 py-2.5 bg-blue-600 text-white hover:bg-blue-500 rounded-lg transition-colors text-sm font-medium">
-          Week 2: Prompting & ML Types →
-        </Link>
-      </div>
+      </nav>
     </main>
   );
 }

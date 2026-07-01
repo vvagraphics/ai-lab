@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -23,4 +23,41 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900 dark:bg-black dark:text-neutral-100 selection:bg-blue-500/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/50 backdrop-blur-xl border border-white/20 dark:bg-white/5 dark:border-white/10;
+  }
+}
+/* Ensure these exist at the top */
+@layer base {
+  .dark {
+    color-scheme: dark;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased selection:bg-neutral-200 dark:selection:bg-neutral-800;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur-2xl border border-white/30 dark:bg-neutral-900/40 dark:border-neutral-800;
+  }
 }

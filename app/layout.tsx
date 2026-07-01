@@ -1,20 +1,13 @@
-import type { Metadata } from "next";
+import { ThemeProvider } from "./components/ThemeProvider";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "AI-Lab Portfolio",
-  description: "Tracking my Fullstack AI Engineer Progression",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-slate-900 text-slate-100 min-h-screen antialiased">
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-neutral-50 dark:bg-black transition-colors duration-700">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
