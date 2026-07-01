@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI-Lab: Generative AI & Agent Portfolio
 
-## Getting Started
+## 🚀 About The Project
 
-First, run the development server:
+This project is a living portfolio tracking my progression through the **IBM SkillsBuild: Generative AI and AI Agent (Q2 2026)** program.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+As a Full-Stack Engineer, I believe the best way to master new technologies is to build with them. Rather than just taking notes, I am translating weekly concepts—from LLM fundamentals to Retrieval-Augmented Generation (RAG) and autonomous AI Agents—into interactive web components.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Built With
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+- **Deployment:** Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📅 Weekly Progression
 
-## Learn More
+### Week 1: Leveraging Context in Generative AI
 
-To learn more about Next.js, take a look at the following resources:
+- **Concepts Mastered:** Artificial Intelligence vs. Machine Learning vs. Deep Learning, and managing LLM Context Windows.
+- **Feature Built:** The Prompt Playground. A UI demonstrating the mechanics of Machine Learning types (Supervised, Unsupervised, Reinforcement) and the tangible output differences between Zero-Shot and Few-Shot prompting methodologies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Week 2: (Coming Soon)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Exploring AI-Powered Chatbots and advanced prompting techniques.
 
-## Deploy on Vercel
+### Week 3: (Coming Soon)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Building an AI Agent and Introduction to RAG.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Week 4: (Coming Soon)
+
+- Implementing document-based RAG Systems.
+
+## 💻 Getting Started
+
+To run this project locally:
+
+1. Clone the repo:
+   `git clone https://github.com/YourUsername/ai-lab.git`
+2. Install NPM packages:
+   `npm install`
+3. Run the development server:
+   `npm run dev`
