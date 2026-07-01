@@ -3,23 +3,36 @@
 import Link from 'next/link';
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Dashboard() {
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  // Prevent hydration mismatch by waiting for mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500">
-      <nav className="fixed w-full z-50 p-6 flex justify-between items-center backdrop-blur-md">
+      {/* Navigation */}
+      <nav className="fixed w-full z-50 p-6 flex justify-between items-center backdrop-blur-md bg-neutral-50/50 dark:bg-black/50 border-b border-neutral-200 dark:border-neutral-800">
         <span className="font-bold tracking-tighter text-xl">AI_ATELIER</span>
-        <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all"
-        >
-          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+        
+        {/* Only show toggle after mount to avoid hydration errors */}
+        {mounted && (
+          <button
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all"
+          >
+            {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        )}
       </nav>
 
-      <main className="max-w-4xl mx-auto pt-32 px-6">
+      {/* Main Gallery */}
+      <main className="max-w-4xl mx-auto pt-40 px-6">
         <header className="mb-32">
           <h1 className="text-7xl font-bold tracking-tighter leading-none mb-6">
             The Digital <br /> <span className="italic font-serif text-neutral-400">Progression</span>
@@ -36,7 +49,7 @@ export default function Dashboard() {
           ].map((item) => (
             <Link href={item.path} key={item.id} className="group block py-8 border-t border-neutral-200 dark:border-neutral-800 transition-all hover:pl-8">
               <div className="flex items-center gap-8">
-                <span className="text-sm font-mono text-neutral-400">{item.id}</span>
+                <span className="text-sm font-mono text-neutral-400 group-hover:text-blue-500">{item.id}</span>
                 <div>
                   <h2 className="text-3xl font-bold group-hover:text-blue-500 transition-colors">{item.title}</h2>
                   <span className="text-sm uppercase tracking-widest text-neutral-500">{item.tag}</span>

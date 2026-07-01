@@ -28,7 +28,7 @@ export function PlaygroundFiller() {
 
       {/* The Filler Content */}
       <div className={`transition-all duration-500 ${isSimpleMode ? 'opacity-80' : 'opacity-100'}`}>
-        <div className="bg-white dark:bg-slate-900 rounded-2xl p-12 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center justify-center text-center min-h-[400px]">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-12 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center justify-center text-center min-h-100">
           <div className="h-16 w-16 bg-blue-100 dark:bg-blue-900/30 text-blue-500 rounded-full flex items-center justify-center mb-6">
             <Sparkles size={32} />
           </div>
