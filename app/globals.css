@@ -13,7 +13,7 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/60 backdrop-blur-2xl border border-neutral-200/50 
+    @apply bg backdrop-blur-2xl border border-neutral-200/50 
            dark:bg-neutral-900/40 dark:border-neutral-800/50;
   }
 }

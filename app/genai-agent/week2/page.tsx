@@ -17,15 +17,37 @@ export default function Week2Page() {
         <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
           <div className="max-w-md">
             <h2 className="text-3xl font-light mb-4">Prompting Simulator</h2>
-            <p className="text-neutral-500">An experiment in pattern alignment. How does providing context (few-shot) change the 'personality' of the output?</p>
+            {/* REMOVED: text-neutral-500 so it inherits the global theme color */}
+            <p className="leading-relaxed">
+              An experiment in pattern alignment. How does providing context (few-shot) change the 'personality' of the output?
+            </p>
           </div>
 
-          <div className="flex p-1 bg-neutral-200 dark:bg-neutral-800 rounded-lg">
-            <button onClick={() => setActive('zero')} className={`px-6 py-2 rounded-md transition-all ${active === 'zero' ? 'bg-white dark:bg-black shadow-sm' : ''}`}>Zero-Shot</button>
-            <button onClick={() => setActive('few')} className={`px-6 py-2 rounded-md transition-all ${active === 'few' ? 'bg-white dark:bg-black shadow-sm' : ''}`}>Few-Shot</button>
-          </div>
+          <div className="flex p-1 bg-neutral-300 dark:bg-neutral-800 rounded-lg transition-colors">
+  <button 
+    onClick={() => setActive('zero')} 
+    className={`px-6 py-2 rounded-md transition-all ${
+      active === 'zero' 
+        ? 'bg-white dark:bg-neutral-600 text-black dark:text-white shadow-sm' 
+        : 'text-neutral-600 dark:text-neutral-400'
+    }`}
+  >
+    Zero-Shot
+  </button>
+  <button 
+    onClick={() => setActive('few')} 
+    className={`px-6 py-2 rounded-md transition-all ${
+      active === 'few' 
+        ? 'bg-white dark:bg-neutral-600 text-black dark:text-white shadow-sm' 
+        : 'text-neutral-600 dark:text-neutral-400'
+    }`}
+  >
+    Few-Shot
+  </button>
+</div>
         </div>
 
+        {/* This section remains untouched to preserve the green terminal effect */}
         <div className="bg-black/90 p-8 rounded-2xl border border-neutral-700 font-mono text-emerald-500 h-64 overflow-y-auto">
            {active === 'zero' ? "> Generating response... \n\n Dear Customer, we are delayed..." : "> Aligning patterns... \n\n Dear VoltDriver, supply chains have shifted..."}
         </div>

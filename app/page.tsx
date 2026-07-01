@@ -30,7 +30,8 @@ export default function Dashboard() {
           <h1 className="text-7xl font-bold tracking-tighter leading-none mb-6">
             The Digital <br /> <span className="italic font-serif text-neutral-400">Progression</span>
           </h1>
-          <p className="text-xl text-neutral-500 dark:text-neutral-400 max-w-lg leading-relaxed">
+          {/* REMOVED: explicit text-neutral color classes to inherit global body text */}
+          <p className="text-xl max-w-lg leading-relaxed">
             A curated documentation of my evolution as an AI Engineer.
           </p>
         </header>

@@ -18,7 +18,8 @@ export default function Week1Page() {
       <div className="space-y-24">
         <section>
           <h2 className="text-2xl font-light italic text-neutral-400 mb-8 tracking-widest">Concept 01: The Nature of Generation</h2>
-          <p className="text-xl leading-relaxed text-neutral-700 dark:text-neutral-300 font-serif">
+          {/* Removed specific text-neutral classes to inherit global body text color */}
+          <p className="text-xl leading-relaxed font-serif">
             Traditional computing is transactional; you input X to get Y. Generative AI, however, 
             is probabilistic. It is a mirror held up to the vastness of human knowledge, 
             interpreting patterns to synthesize something entirely net-new.
@@ -27,7 +28,8 @@ export default function Week1Page() {
 
         <section className="glass rounded-3xl p-12 border border-neutral-200 dark:border-neutral-800">
           <h2 className="text-xl font-bold mb-8">The Transformer Architecture</h2>
-          <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          {/* Removed specific text-neutral classes to inherit global body text color */}
+          <p className="leading-relaxed">
             At the heart of the LLM lies the Transformer—a mechanism that allows the model 
             to weight the importance of different parts of input data, essentially 
             "attending" to context in ways that simulate true comprehension.
