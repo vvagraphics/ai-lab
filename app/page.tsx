@@ -1,95 +1,78 @@
-'use client';
-import { useState } from 'react';
+import Link from 'next/link';
 
-export default function Home() {
-  const [promptType, setPromptType] = useState<'zero' | 'few'>('zero');
-
+export default function Dashboard() {
   return (
-    <main className="min-h-screen bg-gray-50 p-8 text-gray-900">
-      <header className="mb-12 border-b pb-6">
-        <h1 className="text-4xl font-bold text-blue-700">AI-Lab</h1>
-        <p className="text-lg text-gray-600 mt-2">Week 1: Fundamentals & Context Windows</p>
+    <main className="max-w-6xl mx-auto p-6 md:p-12">
+      <header className="mb-12">
+        <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">
+          AI-Lab
+        </h1>
+        <p className="text-slate-400 mt-2">
+          Interactive Proof-of-Work Portfolio | Fullstack AI Engineering Journey
+        </p>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        {/* LEFT COLUMN: ML Fundamentals */}
-        <section className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-          <h2 className="text-2xl font-semibold mb-6 border-b pb-2">Types of Machine Learning</h2>
+        {/* TRACK 1 CARD */}
+        <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-xl">
+          <div className="flex justify-between items-start mb-4">
+            <h2 className="text-xl font-bold text-blue-400">Generative AI and AI Agent</h2>
+            <span className="text-xs font-semibold bg-blue-500/20 text-blue-400 px-2.5 py-1 rounded-full">
+              In Progress
+            </span>
+          </div>
+          <p className="text-sm text-slate-400 mb-6">Weekly exploration of foundations, prompting strategy, and core chatbot infrastructure.</p>
           
-          <div className="space-y-6">
-            <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
-              <h3 className="font-bold text-blue-800 text-lg">1. Supervised Learning</h3>
-              <p className="mt-2 text-sm">Trains on labeled data.</p>
-              <p className="mt-2 text-sm text-gray-700 italic">
-                Example: Tagging 1,000 product reviews as "Happy" or "Angry" so a computer learns to flag complaints.
-              </p>
-            </div>
+          <div className="space-y-3">
+            <Link href="/genai-agent/week1" className="flex items-center justify-between p-3 bg-slate-900/60 hover:bg-slate-900 rounded-lg border border-slate-700/50 transition-all group">
+              <div>
+                <span className="text-xs text-slate-500 block font-mono">WEEK 1</span>
+                <span className="text-sm font-medium text-slate-200 group-hover:text-blue-400">Foundations, Ethics & LLMs</span>
+              </div>
+              <span className="text-emerald-400 text-xs font-semibold">✓ Done</span>
+            </Link>
 
-            <div className="p-4 bg-purple-50 rounded-lg border border-purple-100">
-              <h3 className="font-bold text-purple-800 text-lg">2. Unsupervised Learning</h3>
-              <p className="mt-2 text-sm">Discovers hidden patterns in unlabeled data.</p>
-              <p className="mt-2 text-sm text-gray-700 italic">
-                Example: Grouping shoppers into clusters based on similar buying habits without pre-existing labels.
-              </p>
-            </div>
+            <Link href="/genai-agent/week2" className="flex items-center justify-between p-3 bg-slate-900/60 hover:bg-slate-900 rounded-lg border border-slate-700/50 transition-all group">
+              <div>
+                <span className="text-xs text-slate-500 block font-mono">WEEK 2</span>
+                <span className="text-sm font-medium text-slate-200 group-hover:text-blue-400">Prompting & ML Types</span>
+              </div>
+              <span className="text-emerald-400 text-xs font-semibold">✓ Done</span>
+            </Link>
 
-            <div className="p-4 bg-teal-50 rounded-lg border border-teal-100">
-              <h3 className="font-bold text-teal-800 text-lg">3. Reinforcement Learning</h3>
-              <p className="mt-2 text-sm">Learns via trial and error using a reward system.</p>
-              <p className="mt-2 text-sm text-gray-700 italic">
-                Example: A drone earning points for staying on course and losing points for hitting obstacles.
-              </p>
+            <div className="flex items-center justify-between p-3 bg-slate-900/20 border border-slate-800 rounded-lg opacity-60">
+              <div>
+                <span className="text-xs text-slate-600 block font-mono">WEEK 3</span>
+                <span className="text-sm font-medium text-slate-400">Building an AI Agent</span>
+              </div>
+              <span className="text-amber-400 text-xs font-semibold">Next Up</span>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* RIGHT COLUMN: Prompting Simulator */}
-        <section className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-          <h2 className="text-2xl font-semibold mb-6 border-b pb-2">Prompting Simulator</h2>
+        {/* TRACK 2 CARD */}
+        <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-xl">
+          <div className="flex justify-between items-start mb-4">
+            <h2 className="text-xl font-bold text-teal-400">Applied AI Agents & RAG</h2>
+            <span className="text-xs font-semibold bg-teal-500/20 text-teal-400 px-2.5 py-1 rounded-full">
+              Queued
+            </span>
+          </div>
+          <p className="text-sm text-slate-400 mb-6">Core system architecture engineering across agent environments, vector indexing, and RAG execution layers.</p>
           
-          <div className="mb-6">
-            <label className="block text-sm font-medium mb-2">Scenario:</label>
-            <div className="p-3 bg-gray-100 rounded text-sm text-gray-800">
-              Write an email explaining an Electric Vehicle delivery is delayed by 2 months.
-            </div>
-          </div>
-
-          <div className="flex space-x-2 mb-4">
-            <button 
-              onClick={() => setPromptType('zero')}
-              className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors ${promptType === 'zero' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-            >
-              Zero-Shot Prompt
-            </button>
-            <button 
-              onClick={() => setPromptType('few')}
-              className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors ${promptType === 'few' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-            >
-              Few-Shot Prompt
-            </button>
-          </div>
-
-          <div className="bg-gray-900 text-green-400 p-6 rounded-lg font-mono text-sm min-h-[250px]">
-            {promptType === 'zero' ? (
-              <div>
-                <p className="text-gray-400 mb-4">// ZERO-SHOT OUTPUT (Guessing without context):</p>
-                <p>Dear Customer,</p>
-                <br/>
-                <p>Thank you for contacting us! We are so sorry for the delay... To show our appreciation for your patience, we have credited a 15% discount coupon to your account for your next purchase! Have a wonderful weekend.</p>
+          <div className="space-y-2.5">
+            {[
+              { label: "Power of AI Agents", path: "/applied-agents/power-of-agents", status: "Pending" },
+              { label: "Introduction to RAG", path: "/applied-agents/intro-rag", status: "Pending" },
+            ].map((item, index) => (
+              <div key={index} className="flex items-center justify-between p-2.5 bg-slate-900/40 rounded-lg border border-slate-800 transition-all">
+                <span className="text-sm text-slate-500 font-medium">{item.label}</span>
+                <span className="text-slate-600 text-xs font-medium">{item.status}</span>
               </div>
-            ) : (
-              <div>
-                <p className="text-gray-400 mb-4">// FEW-SHOT OUTPUT (Pattern matching from provided examples):</p>
-                <p>Dear VoltDriver,</p>
-                <br/>
-                <p>Due to supply chain issues, your Electric Volticle delivery has been delayed by two months. We apologize for the inconvenience.</p>
-                <br/>
-                <p>Thank you for your support in making the world greener and safer for humankind.</p>
-              </div>
-            )}
+            ))}
           </div>
-        </section>
+        </div>
 
       </div>
     </main>
