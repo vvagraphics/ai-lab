@@ -9,36 +9,29 @@ export default function Dashboard() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
-  // Prevent hydration mismatch by waiting for mount
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-black text-neutral-900 dark:text-neutral-100 transition-colors duration-500">
-      {/* Navigation */}
+    <div className="min-h-screen transition-colors duration-500">
       <nav className="fixed w-full z-50 p-6 flex justify-between items-center backdrop-blur-md bg-neutral-50/50 dark:bg-black/50 border-b border-neutral-200 dark:border-neutral-800">
         <span className="font-bold tracking-tighter text-xl">AI_ATELIER</span>
-        
-        {/* Only show toggle after mount to avoid hydration errors */}
-        {mounted && (
-          <button
-            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all"
-          >
-            {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-        )}
+        <button
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+          className="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all"
+        >
+          {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
       </nav>
 
-      {/* Main Gallery */}
       <main className="max-w-4xl mx-auto pt-40 px-6">
         <header className="mb-32">
           <h1 className="text-7xl font-bold tracking-tighter leading-none mb-6">
             The Digital <br /> <span className="italic font-serif text-neutral-400">Progression</span>
           </h1>
-          <p className="text-xl text-neutral-500 max-w-lg leading-relaxed">
-            A curated documentation of my evolution as an AI Engineer. Each project is an experiment in logic and aesthetics.
+          <p className="text-xl text-neutral-500 dark:text-neutral-400 max-w-lg leading-relaxed">
+            A curated documentation of my evolution as an AI Engineer.
           </p>
         </header>
 
@@ -52,7 +45,7 @@ export default function Dashboard() {
                 <span className="text-sm font-mono text-neutral-400 group-hover:text-blue-500">{item.id}</span>
                 <div>
                   <h2 className="text-3xl font-bold group-hover:text-blue-500 transition-colors">{item.title}</h2>
-                  <span className="text-sm uppercase tracking-widest text-neutral-500">{item.tag}</span>
+                  <span className="text-sm uppercase tracking-widest text-neutral-500 dark:text-neutral-500">{item.tag}</span>
                 </div>
               </div>
             </Link>
