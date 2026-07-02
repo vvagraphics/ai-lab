@@ -13,7 +13,6 @@ export default function Dashboard() {
 
   if (!mounted) return null;
 
-  // Notice the updated paths pointing to the new /classes/ routing structure
   const courses = [
     {
       title: "Generative AI & AI Agent",
@@ -21,15 +20,15 @@ export default function Dashboard() {
       weeks: [
         { id: "01", title: "Genesis of Logic", path: "/classes/genai-agent/week1", tag: "Foundations" },
         { id: "02", title: "Context as Medium", path: "/classes/genai-agent/week2", tag: "Architecting" },
-        { id: "03", title: "Week 3 (Pending)", path: "/classes/genai-agent/week3", tag: "Upcoming" },
+        { id: "03", title: "Intelligent by Design", path: "/classes/genai-agent/week3", tag: "Deployment" },
       ]
     },
     {
       title: "Applied AI Agents, Chatbots & RAG",
       description: "Practical implementations of intelligent systems, retrieval-augmented generation, and conversational memory.",
       weeks: [
-        { id: "01", title: "Agents & RAG Fundamentals", path: "/classes/applied-ai/week1", tag: "Implementation" },
-        { id: "02", title: "Multiagent Systems", path: "/classes/applied-ai/week2", tag: "Systems" },
+        { id: "01", title: "Agents & Task Execution", path: "/classes/applied-ai/week1", tag: "Implementation" },
+        { id: "02", title: "RAG & Multiagent Systems", path: "/classes/applied-ai/week2", tag: "Systems" },
       ]
     }
   ];
@@ -40,7 +39,7 @@ export default function Dashboard() {
         <span className="font-bold tracking-tighter text-xl">AI_ATELIER</span>
         <button
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-          className="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all"
+          className="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all cursor-pointer"
         >
           {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
         </button>
@@ -49,10 +48,10 @@ export default function Dashboard() {
       <main className="max-w-5xl mx-auto pt-40 px-6 pb-24">
         <header className="mb-24">
           <h1 className="text-7xl font-bold tracking-tighter leading-none mb-6">
-            The Digital <br /> <span className="italic font-serif text-neutral-400">Progression</span>
+            The A.I. <br /> <span className="italic font-serif text-neutral-400">Codex</span>
           </h1>
           <p className="text-xl max-w-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
-            A curated documentation of my evolution as an AI Engineer across multiple disciplines.
+            An evolving documentation of my journey through AI engineering. As the technology breaks new ground, this space updates—translating complex mechanics into interactive, layman-friendly learning modules.
           </p>
         </header>
 
@@ -62,7 +61,7 @@ export default function Dashboard() {
               {/* Course Header */}
               <div className="border-b border-neutral-200 dark:border-neutral-800 pb-8">
                 <span className="text-emerald-500 font-mono text-sm tracking-widest uppercase italic mb-4 block">
-                  Class 0{courseIndex + 1}
+                  Module 0{courseIndex + 1}
                 </span>
                 <h2 className="text-4xl font-bold tracking-tight mb-4">{course.title}</h2>
                 <p className="text-lg text-neutral-500 max-w-2xl">{course.description}</p>

@@ -1,15 +1,16 @@
 "use client";
 
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle } from "lucide-react";
 import { AtelierSection } from "../../../components/AtelierSection";
 import { AgentBuilderSimulator } from "../../../components/AgentBuilderSimulator";
 
 export default function GenAiWeek3Page() {
   return (
     <main className="min-h-screen py-24 px-6 md:px-12 max-w-4xl mx-auto">
-      <Link href="/classes/genai-agent/week2" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-2 mb-12">
-        <ArrowLeft size={16} /> Back to Week 2
+      {/* GLOBAL ESCAPE HATCH - Always goes home */}
+      <Link href="/" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors flex items-center gap-2 mb-12">
+        <ArrowLeft size={16} /> Back to Atelier
       </Link>
       
       <header className="mb-24">
@@ -17,23 +18,39 @@ export default function GenAiWeek3Page() {
         <h1 className="text-5xl md:text-6xl font-bold mt-4 tracking-tight">Intelligent by Design</h1>
       </header>
 
-      <div className="space-y-24">
-        <AtelierSection title="The Lecture: Building an AI Agent">
-          <p className="leading-relaxed text-lg mb-6">
-            In our final module, we transitioned from Chatbots to <strong>AI Agents</strong>. A chatbot is a passive participant that waits for you to ask a question. An AI Agent is an active participant equipped with a "Toolbelt."
-          </p>
-          <p className="leading-relaxed text-lg">
-            By designing an agent with access to APIs (like a web browser or a calculator), we allow the LLM to write code or search the internet to figure out answers it wasn't originally trained on. This is the bridge between generative text and autonomous action.
-          </p>
-        </AtelierSection>
+      <div className="space-y-12">
+        <AtelierSection 
+          title="The Lecture" 
+          shortContent={
+            <p>A standard chatbot waits for your question; an AI Agent acts on a goal. By equipping an LLM with external tools (like a web browser or calculator), we transform it from a passive text generator into an autonomous worker.</p>
+          }
+          fullContent={
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-xl font-bold mb-2">The Evolution to Agents</h4>
+                <p>An LLM alone is trapped in a box. It only knows what it was trained on, and it cannot interact with the outside world. AI Agents solve this by giving the "brain" (the LLM) a set of "hands" (tools). When an Agent realizes it doesn't know an answer, it can autonomously decide to write code, search Google, or query a database to find out.</p>
+              </div>
+            </div>
+          }
+        />
 
-        <AtelierSection title="The Lab: Tool Configuration">
-          <AgentBuilderSimulator />
-        </AtelierSection>
+        <AtelierSection 
+          title="The Lab" 
+          isLab={true}
+          fullContent={
+            <div className="space-y-8">
+              <p className="text-neutral-500 text-lg mb-6">Equip different combinations of digital tools to see how an agent's capabilities and persona evolve.</p>
+              <AgentBuilderSimulator />
+            </div>
+          }
+        />
       </div>
 
+      {/* COURSE PAGINATION */}
       <nav className="mt-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 flex justify-between">
-        <Link href="/" className="text-sm italic text-neutral-500">Back to Studio</Link>
+        <Link href="/classes/genai-agent/week2" className="text-sm font-semibold flex items-center gap-2 hover:-translate-x-2 transition-transform">
+          <ArrowLeft size={16} /> Prev: Prompting
+        </Link>
         <button disabled className="text-sm font-semibold flex items-center gap-2 opacity-50 cursor-not-allowed">
           Course Complete <CheckCircle size={16} />
         </button>
