@@ -1,19 +1,20 @@
 @import 'tailwindcss';
 
 @layer base {
-  /* Default light theme */
+  /* Default Light Mode */
   body {
-    @apply bg-neutral-50 text-neutral-900 transition-colors duration-500;
+    @apply bg-neutral-50 text-neutral-900 antialiased transition-colors duration-500;
   }
-  /* Dark mode override */
+
+  /* Dark Mode Overrides */
   .dark body {
     @apply bg-black text-neutral-100;
   }
 }
 
-@layer utilities {
+@layer components {
+  /* Our custom glassmorphism utility for the Atelier aesthetic */
   .glass {
-    @apply bg backdrop-blur-2xl border border-neutral-200/50 
-           dark:bg-neutral-900/40 dark:border-neutral-800/50;
+    @apply bg-white/40 dark:bg-white/5 backdrop-blur-xl shadow-lg border border-neutral-200/50 dark:border-neutral-800/50;
   }
 }
