@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { AtelierSection } from "../../../components/AtelierSection";
 import { LlmBasicsSimulator } from "../../../components/LlmBasicsSimulator";
+import { EthicsLab } from "../../../components/EthicsLab";
 
 export default function GenAiWeek1Page() {
   return (
@@ -14,22 +15,35 @@ export default function GenAiWeek1Page() {
       
       <header className="mb-24">
         <span className="text-blue-500 font-mono text-sm tracking-widest uppercase italic">Class 01 // Week 1</span>
-        <h1 className="text-5xl md:text-6xl font-bold mt-4 tracking-tight">Foundations & LLM Ethics</h1>
+        <h1 className="text-5xl md:text-6xl font-bold mt-4 tracking-tight">Foundations & Ethics</h1>
       </header>
 
-      <div className="space-y-24">
-        <AtelierSection title="The Lecture: Introduction to LLMs">
-          <p className="leading-relaxed text-lg mb-6">
-            At their core, Large Language Models (LLMs) are just incredibly advanced auto-complete systems. They do not "think"; they calculate the mathematical probability of the next logical word based on billions of parameters of training data. 
-          </p>
-          <p className="leading-relaxed text-lg">
-            However, because they are trained on human data, they inherit human biases. This is why <strong>Ethical Considerations</strong> are critical. As AI Engineers, we must build safety layers (guardrails) around the models to prevent them from generating harmful, biased, or malicious content.
-          </p>
-        </AtelierSection>
+      <div className="space-y-12">
+        <AtelierSection 
+          title="The Lecture" 
+          shortContent={
+            <p>LLMs are advanced predictive engines that learn patterns from human data. Because they mimic human input, they require "Ethical Guardrails" to filter out harmful bias and ensure safe interaction.</p>
+          }
+          fullContent={
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold">Deep Dive into Foundations</h4>
+              <p>LLMs act as masters of pattern recognition, calculating the statistical probability of the next logical word based on trillions of parameters.</p>
+              <h4 className="text-xl font-bold">The Necessity of Ethics</h4>
+              <p>Since AI learns from human history, it requires "guardrails" to filter out toxic output, ensuring it remains a responsible tool for society.</p>
+            </div>
+          }
+        />
 
-        <AtelierSection title="The Lab: Token Prediction & Guardrails">
-          <LlmBasicsSimulator />
-        </AtelierSection>
+        <AtelierSection 
+          title="The Lab" 
+          isLab={true}
+          fullContent={
+            <div className="space-y-12">
+              <LlmBasicsSimulator />
+              <EthicsLab />
+            </div>
+          }
+        />
       </div>
 
       <nav className="mt-32 pt-12 border-t border-neutral-200 dark:border-neutral-800 flex justify-between">
