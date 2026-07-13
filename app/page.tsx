@@ -30,6 +30,15 @@ export default function Dashboard() {
         { id: "01", title: "Agents & Task Execution", path: "/classes/applied-ai/week1", tag: "Implementation" },
         { id: "02", title: "RAG & Multiagent Systems", path: "/classes/applied-ai/week2", tag: "Systems" },
       ]
+    },
+    {
+      title: "The Sandbox: Tests, Training & Builds",
+      description: "My personal proving ground. A living record of model fine-tuning, prompt experiments, and custom AI tools I am building out.",
+      weeks: [
+        { id: "01", title: "Training Logs & Fine-Tuning", path: "/classes/sandbox/training", tag: "Training" },
+        { id: "02", title: "Prompt Engineering & Benchmarks", path: "/classes/sandbox/testing", tag: "Testing" },
+        { id: "03", title: "Live Builds & Agent Workflows", path: "/classes/sandbox/builds", tag: "Projects" },
+      ]
     }
   ];
 
